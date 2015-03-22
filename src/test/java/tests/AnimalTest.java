@@ -21,7 +21,7 @@ public class AnimalTest {
 
     public static WebDriver driver;
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void before() throws InterruptedException {
         System.out.println("BEFORE");
 
@@ -41,7 +41,7 @@ public class AnimalTest {
         return driver;
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void after() {
         System.out.println("AFTER");
         driver.quit();

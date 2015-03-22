@@ -36,21 +36,42 @@ public class CatTest {
        
     }
     
-    @Test
+    @Test(groups = {"gr1"}, priority = 3)
     public void test1() {
-        System.out.println("test1 cat");
+        System.out.println("test1 in group 1");
         System.out.println("driver in Cat: " + driver);
         
     }
     
-    @Test
+    @Test(groups = {"gr1"}, priority = 2)
     public void test2() {
-        System.out.println("test2 cat");
+        System.out.println("test2 in gourp 1");
     }
     
-    @Test(priority = 1)
+    @Test(groups = {"gr1"}, priority = 1)
     public void test3() {
-        System.out.println("test3 cat");
+        System.out.println("test3 in group1");
     }
+    
+     @Test(groups = {"gr2"})
+    public void test4() {
+        System.out.println("test1 in group 2");
+    }
+    
+     @Test(groups = {"gr2"})
+    public void test5() {
+        System.out.println("test2 in group 2");
+    }
+    
+     @Test(groups = {"gr3"})
+    public void test6() {
+        System.out.println("test1 in group 3");
+    }
+    
+      @Test(groups = {"gr3"})
+    public void test7() {
+        System.out.println("test2 in gourp 3");
+    }
+  
     
 }
