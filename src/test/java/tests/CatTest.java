@@ -5,10 +5,16 @@
  */
 package tests;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Attachment;
 import static tests.DogTest.driver;
 
 /**
@@ -17,61 +23,63 @@ import static tests.DogTest.driver;
  */
 @Test
 public class CatTest {
-    
+
     public CatTest() {
-        
+
     }
-    
+
     public static WebDriver driver;
-    
+
     @BeforeClass
     public void setup() {
         driver = AnimalTest.getDriver();
     }
-    
+
     @BeforeMethod
     public void getUrl() {
-      
+
         driver.get("http://www.ranorex.com/web-testing-examples/vip/");
-       
+
     }
-    
+
     @Test(groups = {"gr1"}, priority = 3)
     public void test1() {
         System.out.println("test1 in group 1");
         System.out.println("driver in Cat: " + driver);
-        
+
     }
-    
+
     @Test(groups = {"gr1"}, priority = 2)
     public void test2() {
         System.out.println("test2 in gourp 1");
     }
-    
+
     @Test(groups = {"gr1"}, priority = 1)
     public void test3() {
         System.out.println("test3 in group1");
     }
-    
-     @Test(groups = {"gr2"})
+
+    @Test(groups = {"gr2"})
     public void test4() {
         System.out.println("test1 in group 2");
+        Assert.assertTrue(false);
     }
-    
-     @Test(groups = {"gr2"})
+
+    @Test(groups = {"gr2"})
     public void test5() {
         System.out.println("test2 in group 2");
     }
-    
-     @Test(groups = {"gr3"})
+
+    @Test(groups = {"gr3"})
     public void test6() {
         System.out.println("test1 in group 3");
     }
-    
-      @Test(groups = {"gr3"})
+
+    @Test(groups = {"gr3"})
     public void test7() {
         System.out.println("test2 in gourp 3");
     }
+
   
-    
+
 }
