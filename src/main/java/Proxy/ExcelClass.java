@@ -28,28 +28,50 @@ public class ExcelClass {
         Map<String, String> map1 = new HashMap<>();
         Map<String, String> map2 = new HashMap<>();
 
-        map1.put("key1", "value1");
+        map1.put("key1", "vat");
         map1.put("key2", "value2");
 
-        list1.add(map1);
+        Map<String, String> map3 = new HashMap<>();
 
-        map2.put("key1", "value1");
+        map3.put("vasdfsdft", "vat");
+
+        list1.add(map1);
+        list1.add(map3);
+
+        map2.put("key1", "vat");
         map2.put("key2", "value2");
 
         list2.add(map2);
-        
-        
-        
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        int record = 0;
+        for (Map<String, String> listMap1 : list1) {
+
+            for (Map<String, String> listMap2 : list2) {
+
+                for (Map.Entry<String, String> entrySet : listMap1.entrySet()) {
+                    record++;
+                    String key = entrySet.getKey();
+                    String value = entrySet.getValue();
+
+                    String valueinmap2 = listMap2.get(key);
+
+                    if (!value.equals(valueinmap2)) {
+                        System.out.println("ошибка \n");
+                        System.out.println("value: " + value);
+                        System.out.println("и");
+                        System.out.println("value: " + valueinmap2);
+                        System.out.println("");
+
+                        System.out.println("key " + key + " in table list map1 is: " + value);
+                        System.out.println("but in table listmap2 this key is: " + valueinmap2);
+                        System.out.println("and this is: " + record + " record");
+
+                    }
+
+                }
+
+            }
+
+        }
 
     }
 
