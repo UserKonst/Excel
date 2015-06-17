@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="my tests">
+
+    <test name="test1" allow-return-values="true">
+        
+        <groups>
+            <dependencies>
+                <group name="gr2" depends-on="gr1" />
+                <group name="gr3" depends-on="gr1" />
+            </dependencies>
+        </groups>
+
+        <classes>
+            <class name="tests.AnimalTest" />
+            <class name="tests.CatTest" />
+            <!--            <class name="tests.DogTest" />-->
+        </classes>
+    </test>
+    
+    <test name="test2">
+        <classes>
+            <class name="tests.AnimalTest" />
+            <class name="tests.DogTest" />
+        </classes>
+    </test>
+
+</suite>
